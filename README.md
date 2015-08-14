@@ -11,9 +11,8 @@ gem "lita-spotify"
 ```
 
 ## Configuration
-
-TODO: Describe any configuration attributes the plugin exposes.
+no configuration is required
 
 ## Usage
+lita spotify aristName, songName
 
-TODO: Describe the plugin's features and how to use them.
