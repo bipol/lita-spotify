@@ -1,6 +1,6 @@
 # lita-spotify
 
-TODO: Add a description of the plugin.
+lita-spotify integrates the spotify web api with slack chat.
 
 ## Installation
 
