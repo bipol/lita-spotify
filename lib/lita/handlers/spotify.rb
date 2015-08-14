@@ -10,8 +10,8 @@ module Lita
 
       def find_song(res)
         res_string = res.matches[0][0].split(',')
-        artistName = res_string[0]
-        songName = res_string[1]
+        artistName = res_string[0].downcase
+        songName = res_string[1].downcase
         track_res = http.get(
           SEARCH_URL,
           q: songName,
@@ -24,7 +24,7 @@ module Lita
 
 	
         #track_url = MultiJson.load(track_res.body)["tracks"].select{|t| t['artists']['name'] == artistName}.first['external_urls']['spotify']
-        track_url = MultiJson.load(track_res.body)["tracks"]["items"].select{ |t| t["artists"][0]["name"] == artistName }.first['external_urls']['spotify']
+        track_url = MultiJson.load(track_res.body)["tracks"]["items"].select{ |t| t["artists"][0]["name"].downcase == artistName.downcase }.first['external_urls']['spotify']
         res.reply track_url
       end
     end
