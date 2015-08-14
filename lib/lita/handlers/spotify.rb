@@ -21,8 +21,9 @@ module Lita
 
         if track_res != 200
           return
+	end
 
-        track_url = MultiJson.load(track_res.body)["items"].select{(|t| t['artists']['name'] == artistName && t['name'] == songName}.first['external_urls'}]['spotify']
+        track_url = MultiJson.load(track_res.body)["items"].select{|t| t['artists']['name'] == artistName && t['name'] == songName}.first['external_urls']['spotify']
         res.reply track_url
       end
     end
