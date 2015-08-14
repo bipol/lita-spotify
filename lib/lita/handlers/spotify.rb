@@ -24,8 +24,12 @@ module Lita
 
 	
         #track_url = MultiJson.load(track_res.body)["tracks"].select{|t| t['artists']['name'] == artistName}.first['external_urls']['spotify']
-        track_url = MultiJson.load(track_res.body)["tracks"]["items"].select{ |t| t["artists"][0]["name"].downcase == artistName.downcase }.first['external_urls']['spotify']
-        res.reply track_url
+        track_url = MultiJson.load(track_res.body)["tracks"]["items"].select{ |t| t["artists"][0]["name"].downcase == artistName.downcase } 
+	if track_url != []
+	   res.reply track_url.first['external_urls']['spotify']
+	else 
+	   res.reply "No song was found..."
+	end
       end
     end
 

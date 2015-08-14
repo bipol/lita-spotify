@@ -1,6 +1,6 @@
 Gem::Specification.new do |spec|
   spec.name          = "lita-spotify"
-  spec.version       = "0.1.1"
+  spec.version       = "0.1.2"
   spec.authors       = ["Bipol Alam"]
   spec.email         = ["balam@ispatechnology.com"]
   spec.description   = "Spotify for Lita"
